@@ -1,32 +1,28 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <router-view />
+    <!--  <form-patient></form-patient>
+    <form-doctor></form-doctor>
+    <form-appointment></form-appointment>
+    <form-list></form-list>
+    <main-app></main-app> -->
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import FormPatient from "./components/FormPatient.vue";
+import FormDoctor from "./components/FormDoctor.vue";
+import FormAppointment from "./components/FormAppointment.vue";
+import FormList from "./components/FormList.vue";
+import MainApp from "./components/MainApp.vue";
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  components: {
+    FormPatient,
+    FormDoctor,
+    FormAppointment,
+    FormList,
+    MainApp,
+  },
+};
+</script>

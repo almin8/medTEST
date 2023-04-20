@@ -1,29 +1,45 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import MainApp from "@/components/MainApp.vue";
+import FormPatient from "@/components/FormPatient.vue";
+import FormDoctor from "@/components/FormDoctor.vue";
+import FormAppointment from "@/components/FormAppointment.vue";
+import FormList from "@/components/FormList.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "MainApp",
+    component: MainApp,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/FormPatient",
+    name: "FormPatient",
+    component: FormPatient,
+  },
+  {
+    path: "/FormDoctor",
+    name: "FormDoctor",
+    component: FormDoctor,
+  },
+  {
+    path: "/FormAppointment",
+    name: "FormAppointment",
+    component: FormAppointment,
+  },
+  {
+    path: "/FormList",
+    name: "FormList",
+    component: FormList,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
